@@ -19,15 +19,19 @@ class ReadThreadsTest extends TestCase
     /** @test */
 
     public function a_user_can_browse_all_threads(){
+
         $this->get('/threads')
             ->assertSee($this->thread->title);
+
     }
 
     /** @test */
 
     public function a_user_can_browse_a_single_thread(){
+
         $this->get('/threads/' . $this->thread->id)
             ->assertSee($this->thread->title);
+            
     }
 
     /** @test */
